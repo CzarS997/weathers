@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>#test1</title>
+        <meta name="description" content="Awesome weather app. Check this out!">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Rufina&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <!------------------ Favicon needed! ---------------->
+
+        <!-- <script src="xlsx.full.min.js"></script> -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+            
+            <div class="container">
+                <header class="header">
+                    <!-- Line for logo //top-left side -->
+                    <a href="">
+                        <img src="img/weathers.png" alt="Logo" class = "head_logo">
+                    </a>
+                    <form class="search">
+                        <input type = "text" class="search_field" placeholder="Find your city">
+                        <button class="search-btn">
+                            <!--------------- fancy icon ------------->
+                            <span>Find it!</span>
+                        </button>    
+                    </form>
+                    <!-- top-right section -> Whay should be here? -->
+                    
+                </header>
+                <!------------------- In case, if something matched... -------------->
+                    <div class="results">
+                        <ul class="results__list">
+                    <!------------------------------- Results Section  ----------------------------------->
+                    <h1 class="head1">Latest hits </h1>
+                    
+                    <!------------- Insert some: <li> ... </li> ----------->
+                        </ul>
+            
+                        <div class="results__pages"> 
+                    <!--------------------------------- Buttons for results -> Necessary? ----------------------------->
+                        </div>
+                    </div>
+
+                    <div class="weather__all">
+                        <div class="weather_today"> Something</div>
+
+                        <div class="forecast_days">
+                                <i class="arr_left"></i> 
+                            <ul class="forecast_results">
+                                <li>1.Sample text</li>
+                                <li>2.Sample text</li>
+                                <li>3.Sample text</li>
+                                <li>4.Sample text</li>
+                             <!--   <li>5.Sample text</li>
+                                <li>6.Sample text</li>
+                                <li>7.Sample text</li>   -->
+                                
+                            </ul>
+                               <i class="arr_right"></i> 
+
+                        </div>
+                        <footer>
+                            Czarek Wrzesiński &copy Powered by: <a href="https://darksky.net" target="_blank">darksky.net</a>
+                        </footer>
+
+                    </div>
+
+
+            </div>
+     
+        
+    </body>
+</html>

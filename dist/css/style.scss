@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell&display=swap');
+@import "./common";
+$counColor: rgb(85, 18, 116);
+$capColor: rgb(238, 6, 6);
+
+
+* {
+    margin: 0;
+    padding: 0; }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit; }
+  
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%; }
+    @media only screen and (max-width: 68.75em) {
+      html {
+        font-size: 50%; } }
+  
+body {
+    font-family: 'Rufina', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgb(23, 59, 114);
+    background-image: linear-gradient(to right top, rgb(145, 189, 255), rgb(2, 105, 189));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - 2 * 4vw); }
+
+.container{
+
+    max-width: 120rem;
+    margin: 4vw auto;
+    background-image: linear-gradient(to left bottom, rgb(145, 189, 255), rgb(255,255,255));
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2rem 6rem 0.5rem rgba(58, 53, 77, 0.2);
+    display: grid;
+    grid-template-rows: 10rem minmax(100rem, auto);
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "head head" "search feedback";
+    
+    }
+@media only screen and (max-width: 65em){
+  .container{
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+
+.header{
+
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+
+.head_logo{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    height: 8rem;
+    display: block; 
+    transition: all .4s;
+    }
+    .head_logo:hover{
+      transform: translateX(2px);
+    }
+
+.search {
+      margin-right: 10%;
+      background-color: rgb(221, 254, 255);
+      border-radius: 4rem;
+      display: flex;
+      align-items: center;
+      padding-left: 2rem;
+      transition: all .3s; 
+      
+    }
+.search:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0.5rem 0.7rem 3rem rgba(20, 22, 22, 0.08);   
+      
+}
+
+.search_field{
+
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.7rem;
+  width: 30rem;
+}
+
+.search-btn, .search-btn:link, .search-btn:visited{
+
+font-size: 1.4rem;
+padding: 1.3rem 3rem;
+border-radius: 2rem;
+border: none;
+background-image: linear-gradient(to left top, rgb(255, 205, 43), rgb(248, 248, 248));
+align-items: center;
+display: flex;
+cursor: pointer;
+transition: all .4s;
+transition-property: color, transform;
+}
+
+.search-btn:hover{
+  /*transform: scale(1.1);*/
+  transform: skew(10deg) scale(1.1); 
+  color: rgb(171, 189, 9);
+}
+
+.search_field:focus{
+  outline: none;
+}
+
+.typ_button{
+visibility: hidden;
+} 
+
+.head1{
+  text-transform: uppercase;
+  text-align: center;
+  transform: skewX(5deg) ;
+  padding-top: 2rem;
+  font-size: 25px;
+  transition: all .2s;
+  margin-bottom: 2rem;
+  &:hover{
+    transform: skewX(5deg) translateY(-1px);
+  }  
+}
+
+.results{
+margin-left: 10%;
+}
+
+
+.results__list li{
+
+  display: flex;
+  list-style-type: none;
+  border: 1px black solid;
+  transition: all .5s;
+  transition-property: color, background-color;
+  align-items: flex-end; 
+  justify-content: space-between;
+  height: 8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+
+  .cap{
+
+    padding-bottom: 5%;
+    text-align: left;
+    color: $capColor;
+    font-size: 3rem;
+    margin-left: 5px;
+    letter-spacing: -1px;
+    transition: all .5s;
+    line-height: 1;
+    
+    }
+
+    .coun{
+
+      text-align: right;
+      color: $counColor;
+      font-size: 2rem;
+      margin-right: 5px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      padding-bottom: 2px;
+      transition: all .5s;
+      
+      }
+
+
+  &:hover{
+
+      background-color: rgb(186, 213, 252);
+
+      .cap{
+        color: $counColor;
+      }
+    
+      .coun{
+        color: $capColor;
+      }
+
+  }
+
+}
+
+
+    
+.weather_today{
+
+  font-size: 3rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 65%;
+  border: 1px black solid;
+  border-radius: 2rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px rgb(255, 205, 43);
+ 
+
+
+}
+
+.forecast_days{
+
+  margin-top: 2rem;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  text-align: center;
+  overflow: hidden;
+  
+  i{
+    border: solid black;
+    height: 15px;
+    width: 15px;
+    border-width: 0 3px 3px 0;
+    display: flex;
+    padding: 3px;
+    transition: all .5s;
+    transition-property: border;
+  }
+}
+
+.arr_right{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 6px;
+  @extend .arr;
+}
+
+.arr_left{
+transform: rotate(135deg);
+-webkit-transform: rotate(135deg);
+margin-left: 6px;
+  @extend .arr;
+}
+
+.forecast_results{
+
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  border: 1px black solid;
+  border-radius: 2rem;
+  overflow: hidden;
+  
+  li {
+
+  border: inherit;
+  border-radius: inherit;
+  border-top: none;
+  border-bottom: none;
+  width: 18rem;
+  overflow: hidden;
+  font-size: 13px;
+  transition: all .4s;
+
+  &:hover{
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+    &:first-child{
+      border-left: none;
+    }
+
+    &:last-child{
+      border-right: none;
+     
+    }
+    
+    &:nth-child(n+5){
+      
+     display: none;
+    }
+
+    span{
+      color:black;
+      font-size: 2rem;
+      font-weight: 500;
+
+
+    }
+    
+    
+   }
+
+}
+
+
+.forecast_results li:nth-child(even){
+
+  background-image: linear-gradient(to left top, rgb(193, 223, 243), rgb(255,255,255) );
+}
+.forecast_results li:nth-child(odd){
+
+  background-image: linear-gradient(to left top, rgb(255,255,255), rgb(193, 223, 243) );
+}
+
+footer{
+
+  text-align: right;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  margin: 2rem 2rem 0 0;
+
+  a{
+
+    text-decoration: none;
+    color: black;
+    transition: all .4s;
+    &:hover{
+
+      color: yellowgreen;
+
+    }
+  }
+}
+
+.par1{
+
+margin-top: 4rem;
+
+}
+
+.eleHit{
+font-family: 'Cantarell', sans-serif;
+line-height: 1;
+}
+
+.g_icon{
+
+  @extend .w_icon;
+  height: 30rem;
+  width: 30rem;
+
+}
+
+.f_icon{
+  @extend .w_icon;
+  height: 10rem;
+  width: 10rem;
+}
+.bush{
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  line-height: 1.2;
+}
