@@ -1,5 +1,5 @@
 import Localproto from '../models/Localproto';
-import * as base from '../base'
+import * as base from '../base';
 
 export const renderLocal = (obj) => {
 
@@ -17,23 +17,23 @@ export const renderLocal = (obj) => {
     let upd = temp[1] + ' ' + temp[2] + ' ' + temp[3] + ' ' + temp[4];
     let tmz = temp[5];
 
-    let markup = `<img class="g_icon" src="../img/${obj.result.daily.icon }.svg" alt="It's raining man!"></br>
+    let markUpper = `<img class="g_icon" src="../img/${obj.result.daily.icon }.svg" alt="It's raining man!"></br>
     City: ${conv[1] + ' ' + conv[2]}</br>
     Timezone: ${obj.result.timezone}  (${tmz}) </br>
     Summary of week: ${obj.result.daily.summary} 
     </br>
     Last update: ${upd}</br>
     `;
-    base.attach.today.innerHTML = markup;
+    base.attach.today.innerHTML = markUpper;
     // Fade in text
     base.attach.today.style.display = 'none';
     $('.weather_today').fadeIn();
 
-    /************* FORECAST(DAYS) SECTION ********************/
+    /********************************* FORECAST(DAYS) SECTION ****************************************/
 
-    const items = document.querySelectorAll('.forecast_results li'), tab = [];
-    let i = 0, short = obj.result.daily.data;
-    items.forEach((el) => {
+        const items = document.querySelectorAll('.forecast_results li'), tab = [];
+        let i = 0, short = obj.result.daily.data;
+        items.forEach((el) => {
 
         let bee = base.toNormalTime(short[i].temperatureHighTime) + ' ';
         let theta = bee.split(' '); 
@@ -41,12 +41,28 @@ export const renderLocal = (obj) => {
         let markup = `<div class="bush"><span>${theta[0] + ' ' + theta[1] + ' ' + theta[2] + ' ' + theta[3]}</span></br>
         <img class="f_icon" src="../img/${short[i].icon}.svg" alt="It's raining man!"></br>
         ${short[i].summary} </br>Max temp: ${short[i].temperatureHigh} &#176;C 
-        </br>Min Temp: ${short[i].temperatureLow} &#176;C</div>`;
+        </br>Min Temp: ${short[i].temperatureLow} &#176;C</br>
+        Wind speed: ${short[i].windSpeed}, direction: ${base.directions(short[i].windDirection)}</div>`;
 
         el.innerHTML = markup;
         i++;
         el.style.display = 'none';
         $(el).fadeIn();
+        /*********************** ADD EVENT LISTENER -> CLICK: DISPLAY ON 'BIG SCREEN' **************/
+
+        el.addEventListener('click', () => {
+
+            
+            let temp = $('.weather_today');
+            // INNER HTML
+            temp.html(markup);
+            //REMOVE AND ADD CLASS
+            $('.f_icon').first().removeClass().addClass('g_icon');
+            $('.bush').first().css('display', 'none');
+            $('.bush').first().fadeIn();
+
+        });
+
 
     });
 

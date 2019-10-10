@@ -1,7 +1,8 @@
 .arr{
+    display: inline-block;
     margin-top: auto;
     margin-bottom: auto;
-    
+    z-index: 1;
     &:hover{
       cursor: pointer;
       border: solid rgb(238, 6, 6);

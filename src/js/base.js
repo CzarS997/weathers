@@ -8,7 +8,13 @@ export const attach = {
 
     today: document.querySelector('.weather_today'),
     hitEle: document.querySelector('.head1'),
-    eleHit: document.querySelector('.eleHit')
+    eleHit: document.querySelector('.eleHit'),
+    eleEveryHit: document.querySelectorAll('.eleHit'),
+    arrRight: document.querySelector('.arr_right'),
+    arrLeft: document.querySelector('.arr_left'),
+    capitals: document.querySelectorAll('.cap'),
+    subBtn: document.querySelector('.search-btn'),
+    cityValue: document.querySelector('.search_field')
 };
 
 export const toNormalTime = (time) => {
@@ -18,5 +24,38 @@ export const toNormalTime = (time) => {
     let final = utcTime.slice(-11, -4);
 
     return utcTime;
+};
+
+export const directions = (direction) => {
+
+    switch(direction){
+        case 'S':
+            return 'South';
+            break;
+        case 'N':
+            return 'North';
+            break;
+        case 'E':
+            return 'East';
+            break;
+        case 'W':
+            return 'West';
+            break;
+        case 'SE':
+            return 'South-East';
+            break;
+        case 'NE':
+           return 'North-West';
+            break;
+        case 'SW':
+            return 'South-West';
+            break;
+        case 'NW':
+            return 'North-West';
+            break;
+
+
+    }
+
 
 }

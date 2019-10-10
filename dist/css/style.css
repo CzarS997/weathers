@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Cantarell&display=swap");
 .arr, .arr_right, .arr_left {
+  display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
+  z-index: 1;
 }
 
 .arr:hover, .arr_right:hover, .arr_left:hover {
@@ -231,6 +233,7 @@ body {
   -webkit-transition: all .5s;
   transition: all .5s;
   line-height: 1;
+  pointer-events: none;
 }
 
 .results__list li .coun {
@@ -243,6 +246,7 @@ body {
   padding-bottom: 2px;
   -webkit-transition: all .5s;
   transition: all .5s;
+  pointer-events: none;
 }
 
 .results__list li:hover {
@@ -315,59 +319,68 @@ body {
 }
 
 .forecast_results {
+  width: 722px;
+  height: 250px;
   list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  /*
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  */
   height: 100%;
   border: 1px black solid;
   border-radius: 2rem;
   overflow: hidden;
 }
 
-.forecast_results li {
-  border: inherit;
-  border-radius: inherit;
+.forecast_results ul {
+  border: none;
+  display: inline-block;
+  height: inherit;
+  width: 144rem;
+}
+
+.forecast_results ul li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 1px black solid;
+  border-radius: 2rem;
   border-top: none;
   border-bottom: none;
   width: 18rem;
+  height: 25rem;
   overflow: hidden;
   font-size: 13px;
   -webkit-transition: all .4s;
   transition: all .4s;
 }
 
-.forecast_results li:hover {
+.forecast_results ul li:hover {
   opacity: 0.7;
   cursor: pointer;
 }
 
-.forecast_results li:first-child {
+.forecast_results ul li:first-child {
   border-left: none;
 }
 
-.forecast_results li:last-child {
+.forecast_results ul li:last-child {
   border-right: none;
 }
 
-.forecast_results li:nth-child(n+5) {
-  display: none;
-}
-
-.forecast_results li span {
+.forecast_results ul li span {
   color: black;
   font-size: 2rem;
   font-weight: 500;
+}
+
+.arr_box {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 2rem;
 }
 
 .forecast_results li:nth-child(even) {
@@ -418,8 +431,68 @@ footer a:hover {
 }
 
 .bush {
+  padding-top: 2.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
   line-height: 1.2;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+  }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+@-webkit-keyframes colorChanges {
+  0% {
+    color: red;
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes colorChanges {
+  0% {
+    color: red;
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    color: red;
+  }
 }
 /*# sourceMappingURL=style.css.map */
