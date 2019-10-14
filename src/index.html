@@ -6,28 +6,32 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>#test1</title>
+        <title>WeatherS</title>
         <meta name="description" content="Awesome weather app. Check this out!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Rufina&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <!------------------ Favicon needed! ---------------->
-
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <!-- <script src="xlsx.full.min.js"></script> -->
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-            
+        <div class="mesBox">Message box</div>
+        <div class="curr">Some bollocks</div>
             <div class="container">
+                
+
                 <header class="header">
                     <!-- Line for logo //top-left side -->
                     <a href="">
                         <img src="img/weathers.png" alt="Logo" class = "head_logo">
                     </a>
-                    <form class="search">
+                    
+                    <form class="search" onSubmit="return false;">
                         <input type = "text" class="search_field" placeholder="City, country">
                         <button class="search-btn" type="button">
                             <!--------------- fancy icon ------------->
@@ -78,8 +82,10 @@
                             </div>
                         </div>
                         <footer>
-                            Czarek Wrzesiński &copy Powered by: <a href="https://darksky.net" target="_blank">darksky.net</a>
+                            Czarek Wrzesiński &copy Powered by: 
+                            <a href="https://darksky.net" target="_blank">darksky.net</a>, and thanks to <a href="https://cloud.google.com/maps-platform/" target="_blank">Mr. Google</a>
                         </footer>
+                        <div id="flatIcon">Icons made by <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/"title="Flaticon">www.flaticon.com</a></div>
 
                     </div>
 

@@ -14,7 +14,8 @@ export const attach = {
     arrLeft: document.querySelector('.arr_left'),
     capitals: document.querySelectorAll('.cap'),
     subBtn: document.querySelector('.search-btn'),
-    cityValue: document.querySelector('.search_field')
+    cityValue: document.querySelector('.search_field'),
+    mesBox: document.querySelector('.mesBox')
 };
 
 export const toNormalTime = (time) => {
@@ -59,3 +60,30 @@ export const directions = (direction) => {
 
 
 }
+
+//TO develop ---> only 3 icons have an animation
+export const animateIcons = (el) => {
+
+    if($(el).attr("src").includes('clear-day')){
+
+        $(el).css({'animation': 'rotateMe 5s infinite'});
+        console.log(`I'm in that block!`);
+    }else if($(el).attr("src").includes('cloudy')){
+
+        $(el).css({'animation': 'soWindy 5s infinite'});
+
+
+    }else if($(el).attr("src").includes('rain')){
+
+        $(el).css({'animation': 'itPersp 5s infinite'});
+    }
+    else {
+
+        $(el).css({'animation': 'none'});
+
+    }
+
+};
+
+
+

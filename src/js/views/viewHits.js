@@ -15,6 +15,24 @@ $('.eleHit').fadeIn();
 document.querySelector('.eleHit').addEventListener('click', () => { 
     
 
+  // Location string should disappear!  
+ $('.curr').fadeOut();  
+// Insert new location string
+const [city, country] = [$(event.target.children[0]).text(), $(event.target.children[1]).text()]
+
+var markup = `<a href="https://en.wikipedia.org/wiki/${city}" target="_blank">${city}</a>, ${country}`;
+
+
+ setTimeout(() => {
+
+  //and fadeIn!
+  $('.curr').html(markup);
+  $('.curr').fadeIn();
+
+ }, 400);
+
+
+
 //RESET EVERY ANIMATIONS OF 'CHANGING COLOR'
 document.querySelectorAll('.cap').forEach((el) => {
 

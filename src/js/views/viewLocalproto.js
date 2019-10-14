@@ -17,7 +17,7 @@ export const renderLocal = (obj) => {
     let upd = temp[1] + ' ' + temp[2] + ' ' + temp[3] + ' ' + temp[4];
     let tmz = temp[5];
 
-    let markUpper = `<img class="g_icon" src="../img/${obj.result.daily.icon }.svg" alt="It's raining man!"></br>
+    let markUpper = `<img class="g_icon" role="img" title="${obj.result.daily.icon}" src="../../img/${obj.result.daily.icon }.svg"></br>
     City: ${conv[1] + ' ' + conv[2]}</br>
     Timezone: ${obj.result.timezone}  (${tmz}) </br>
     Summary of week: ${obj.result.daily.summary} 
@@ -29,6 +29,8 @@ export const renderLocal = (obj) => {
     base.attach.today.style.display = 'none';
     $('.weather_today').fadeIn();
 
+    base.animateIcons('.g_icon');
+    
     /********************************* FORECAST(DAYS) SECTION ****************************************/
 
         const items = document.querySelectorAll('.forecast_results li'), tab = [];
@@ -60,6 +62,7 @@ export const renderLocal = (obj) => {
             $('.f_icon').first().removeClass().addClass('g_icon');
             $('.bush').first().css('display', 'none');
             $('.bush').first().fadeIn();
+           base.animateIcons('.g_icon');
 
         });
 
