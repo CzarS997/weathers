@@ -9,6 +9,7 @@ export const renderLocal = (obj) => {
 
     */
     /* MAIN SCREEN SECTION */
+    try{
     let conv = obj.gglData.plus_code.compound_code.split(' ');
        
     let xd = obj.result.daily.updatedDateTime._d + ' ';
@@ -24,12 +25,18 @@ export const renderLocal = (obj) => {
     </br>
     Last update: ${upd}</br>
     `;
-    base.attach.today.innerHTML = markUpper;
-    // Fade in text
-    base.attach.today.style.display = 'none';
-    $('.weather_today').fadeIn();
+     
+        base.attach.today.innerHTML = markUpper; 
+    
+        // Fade in text
+        base.attach.today.style.display = 'none';
+        $('.weather_today').fadeIn();
 
-    base.animateIcons('.g_icon');
+        base.animateIcons('.g_icon');
+    
+
+    
+ 
     
     /********************************* FORECAST(DAYS) SECTION ****************************************/
 
@@ -48,8 +55,15 @@ export const renderLocal = (obj) => {
 
         el.innerHTML = markup;
         i++;
-        el.style.display = 'none';
+        
+        //$(el).fadeOut();
+        
+
+        $(el).css('display', 'none');
         $(el).fadeIn();
+
+       
+
         /*********************** ADD EVENT LISTENER -> CLICK: DISPLAY ON 'BIG SCREEN' **************/
 
         el.addEventListener('click', () => {
@@ -62,13 +76,24 @@ export const renderLocal = (obj) => {
             $('.f_icon').first().removeClass().addClass('g_icon');
             $('.bush').first().css('display', 'none');
             $('.bush').first().fadeIn();
-           base.animateIcons('.g_icon');
+            base.animateIcons('.g_icon');
 
         });
 
 
     });
 
+}catch(err){
+
+
+    base.attach.today.innerHTML = '';
+        let markup = `<p class="par1" style="display: none;">Some problems appeared ;/</p>`;
+        console.log(`Something went wrong!\n${err}`);
+        base.attach.today.insertAdjacentHTML('beforeend', markup);
+        $('.par1').fadeIn();
+
+
+};
 
 };
 

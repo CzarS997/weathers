@@ -77,6 +77,11 @@ export const animateIcons = (el) => {
 
         $(el).css({'animation': 'itPersp 5s infinite'});
     }
+    else if($(el).attr("src").includes('fog')){
+
+        $(el).css({'animation': 'fogReal 5s infinite'});
+
+    }
     else {
 
         $(el).css({'animation': 'none'});

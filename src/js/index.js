@@ -78,14 +78,18 @@ setTimeout(()=> {
 
         renderLocal(state.cityW);
         showCity();
+        
+        document.querySelectorAll('.cap').forEach((el) => {
 
+            console.log(el);
+            el.style.animation = 'none';
+
+        });
 
     } 
     else
     {
         showMess();
-        
-
     }
 
 }, 2000);

@@ -41,7 +41,12 @@ export default class Hitproto{
                 console.log(res);                
                 this.result = res; 
             })
-            .catch(err => console.log(`Something went wrong ;/ ${err}`));
+            .catch(err =>{ 
+
+                console.log(`Something went wrong ;/ ${err}`);
+
+
+            
 
         });
 
@@ -53,20 +58,13 @@ export default class Hitproto{
                 console.log(this.gglData);
                 //console.log('Californication!');
                 
-            })
+            });
 
 
-        }, 1000);
-    }
-/*
-    getCapFor(){
-
-        DarkSkyApi.loadCurrent(this.position)
-
-
+            }, 1000);
+      });
 
 
     }
-*/
 
-};
+}

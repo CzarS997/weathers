@@ -22,7 +22,68 @@ $forWidthLi: 18rem;
     font-size: 62.5%; }
     @media only screen and (max-width: 68.75em) {
       html {
-        font-size: 50%; } }
+        font-size: 50%; 
+        width: 100%;
+      }
+        .container{
+          width: 77%;
+          box-sizing: border-box;
+          
+        }
+       
+       .search{
+         margin-right: 20rem !important;
+       }
+        
+
+        .weather_today{
+          //width: 78%;
+          margin-right: 1.5rem !important;
+
+        }
+        .forecast_days{
+          //width: 75%;
+          height: 220px !important;
+        }
+        .forecast_results{
+
+            height: 220px !important;
+            width: 60rem !important;
+          ul{
+            
+
+            li{
+              height: 219px !important;
+              width: 20rem !important;
+            }
+
+          }
+        }
+
+        .bush{
+          height: 208px;
+        }
+        .cap{
+          font-size: 2.4rem !important;
+          margin-bottom: auto;
+          margin-top: auto;
+          
+        }
+        .coun{
+          display: none;
+        }
+        footer{
+          margin-right: 200px !important;
+          font-size: 10px !important;
+        }
+        #flatIcon{
+
+          margin-right: 200px !important;
+
+        }
+
+      
+      }
   
 body {
     font-family: 'Rufina', serif;
@@ -48,12 +109,108 @@ body {
     grid-template-areas: "head head" "search feedback";
     
     }
+
 @media only screen and (max-width: 65em){
+ 
   .container{
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
+    width: 100vw !important;
+  box-sizing: border-box;
+    border-radius: 1rem;
+    
   }
+  
+
+  .weather_today{
+   margin-left: 1.5rem !important; 
+   margin-right: 1.5rem !important;
+   //margin: auto !important;
+
+
+  }
+  .forecast_days{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 63.5rem !important;
+    
+  }
+
+  .forecast_results{
+
+   width: inherit !important;
+   ul{
+
+
+    li{
+      width: 20rem !important;
+    }
+
+   }
+  }
+
+ 
+ .coun{
+   display: block;
+ }
+
+ footer{
+   margin-right: 10rem !important;
+ }
+ #flatIcon{
+  margin-right: 10rem !important;
+ }
+
+ .mesBox{
+  width: 60vw !important;
+  margin-left: 20vw !important;
+ }
+ 
+}
+
+@media only screen and (max-width: 50em){
+
+  .content{
+    box-sizing: border-box;
+    margin-left:auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    //grid-template-rows: 10rem minmax(100rem, auto);
+    grid-template-columns: 0.1fr 2fr !important;
+    //grid-template-areas: "head head" "search feedback";
+  }
+.results{
+  display: none;
+  width: 10px;
+}
+
+.weather_today{
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+}
+.weather__all{
+
+  margin-left: 20vw !important;
+  margin-right: 20vw !important;
+
+}
+.curr{
+  display: none !important;
+}
+
+footer{
+  margin-right: 0 !important;
+}
+#flatIcon{
+  margin-right: 0 !important;
+}
+
+.mesBox{
+  width: 60vw !important;
+  margin-left: 20vw !important;
+}
+
+
+
 }
 
 
@@ -219,8 +376,12 @@ margin-left: 10%;
   height: 65%;
   border: 1px black solid;
   border-radius: 2rem;
-  margin-right: 3rem;
-  margin-left: 3rem;
+  //margin-right: 3rem;
+  //margin-left: 3rem;
+  
+  margin-left: 1.5vw;
+  margin-right: 1.5vh;
+
   text-align: center;
   text-shadow: 2px 2px rgb(255, 205, 43);
  
@@ -497,6 +658,17 @@ margin-right: 2rem;
 
 }
 
+@keyframes fogReal{
+
+ 0%{ transform: translate(0rem); }
+ 25%{transform:  translateX(6rem)  rotateX(30deg) ;}
+ 50%{transform:  translateX(-6rem) rotateY(-30deg);}
+ 75%{transform: translateX(6rem)  rotateX(30deg) ;}
+ 100%{transform:  translateX(0rem);}
+
+
+}
+
 
 .mesBox{
 
@@ -527,8 +699,9 @@ display: none;
 font-family: 'Barlow Semi Condensed', sans-serif;
 position: absolute;
 z-index: 0.9;
-margin-top: 4vh;
-margin-left: 28vw;
+/*margin-top: 4vh;*/
+margin-left: 24vw;
+
 font-size: 2rem;
 color: black;
 display: none;
@@ -551,8 +724,3 @@ display: none;
 
 }
 
-path #path6{
-
-  color:black;
-
-}

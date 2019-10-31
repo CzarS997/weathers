@@ -41,6 +41,47 @@ html {
 @media only screen and (max-width: 68.75em) {
   html {
     font-size: 50%;
+    width: 100%;
+  }
+  .container {
+    width: 77%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .search {
+    margin-right: 20rem !important;
+  }
+  .weather_today {
+    margin-right: 1.5rem !important;
+  }
+  .forecast_days {
+    height: 220px !important;
+  }
+  .forecast_results {
+    height: 220px !important;
+    width: 60rem !important;
+  }
+  .forecast_results ul li {
+    height: 219px !important;
+    width: 20rem !important;
+  }
+  .bush {
+    height: 208px;
+  }
+  .cap {
+    font-size: 2.4rem !important;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+  .coun {
+    display: none;
+  }
+  footer {
+    margin-right: 200px !important;
+    font-size: 10px !important;
+  }
+  #flatIcon {
+    margin-right: 200px !important;
   }
 }
 
@@ -76,9 +117,75 @@ body {
 
 @media only screen and (max-width: 65em) {
   .container {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
+    width: 100vw !important;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 1rem;
+  }
+  .weather_today {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+  .forecast_days {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 63.5rem !important;
+  }
+  .forecast_results {
+    width: inherit !important;
+  }
+  .forecast_results ul li {
+    width: 20rem !important;
+  }
+  .coun {
+    display: block;
+  }
+  footer {
+    margin-right: 10rem !important;
+  }
+  #flatIcon {
+    margin-right: 10rem !important;
+  }
+  .mesBox {
+    width: 60vw !important;
+    margin-left: 20vw !important;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .content {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    -ms-grid-columns: 0.1fr 2fr !important;
+        grid-template-columns: 0.1fr 2fr !important;
+  }
+  .results {
+    display: none;
+    width: 10px;
+  }
+  .weather_today {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .weather__all {
+    margin-left: 20vw !important;
+    margin-right: 20vw !important;
+  }
+  .curr {
+    display: none !important;
+  }
+  footer {
+    margin-right: 0 !important;
+  }
+  #flatIcon {
+    margin-right: 0 !important;
+  }
+  .mesBox {
+    width: 60vw !important;
+    margin-left: 20vw !important;
   }
 }
 
@@ -270,8 +377,8 @@ body {
   height: 65%;
   border: 1px black solid;
   border-radius: 2rem;
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin-left: 1.5vw;
+  margin-right: 1.5vh;
   text-align: center;
   text-shadow: 2px 2px #ffcd2b;
 }
@@ -597,6 +704,52 @@ footer a:hover {
   }
 }
 
+@-webkit-keyframes fogReal {
+  0% {
+    -webkit-transform: translate(0rem);
+            transform: translate(0rem);
+  }
+  25% {
+    -webkit-transform: translateX(6rem) rotateX(30deg);
+            transform: translateX(6rem) rotateX(30deg);
+  }
+  50% {
+    -webkit-transform: translateX(-6rem) rotateY(-30deg);
+            transform: translateX(-6rem) rotateY(-30deg);
+  }
+  75% {
+    -webkit-transform: translateX(6rem) rotateX(30deg);
+            transform: translateX(6rem) rotateX(30deg);
+  }
+  100% {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
+@keyframes fogReal {
+  0% {
+    -webkit-transform: translate(0rem);
+            transform: translate(0rem);
+  }
+  25% {
+    -webkit-transform: translateX(6rem) rotateX(30deg);
+            transform: translateX(6rem) rotateX(30deg);
+  }
+  50% {
+    -webkit-transform: translateX(-6rem) rotateY(-30deg);
+            transform: translateX(-6rem) rotateY(-30deg);
+  }
+  75% {
+    -webkit-transform: translateX(6rem) rotateX(30deg);
+            transform: translateX(6rem) rotateX(30deg);
+  }
+  100% {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
 .mesBox {
   position: absolute !important;
   z-index: 1;
@@ -621,8 +774,8 @@ footer a:hover {
   font-family: 'Barlow Semi Condensed', sans-serif;
   position: absolute;
   z-index: 0.9;
-  margin-top: 4vh;
-  margin-left: 28vw;
+  /*margin-top: 4vh;*/
+  margin-left: 24vw;
   font-size: 2rem;
   color: black;
   display: none;
@@ -639,9 +792,5 @@ footer a:hover {
   cursor: pointer;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-}
-
-path #path6 {
-  color: black;
 }
 /*# sourceMappingURL=style.css.map */

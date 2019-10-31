@@ -57,10 +57,16 @@ document.querySelectorAll('.cap').forEach((el) => {
 
     setTimeout(()=> {
 
-        //Clean area
-        $('.weather_today').html('');
+        $('.weather_today').fadeOut();
+       
+        setTimeout(() => {
 
-       renderLocal(hitMe);
+         //Clean area
+        $('.weather_today').html('');
+        renderLocal(hitMe);
+
+        }, 400);
+
        
     
     }, 1500);
